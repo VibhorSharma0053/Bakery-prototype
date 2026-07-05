@@ -1,0 +1,444 @@
+<!-- Design System -->
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sweet Crumbs Bakery - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#77574d",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f7f3f1",
+                        "secondary-fixed-dim": "#e7bdb1",
+                        "inverse-primary": "#ccc6be",
+                        "on-surface": "#1c1b1b",
+                        "on-background": "#1c1b1b",
+                        "on-primary-fixed-variant": "#4a4641",
+                        "on-primary-container": "#76726b",
+                        "tertiary-container": "#fff7f7",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e6e2e0",
+                        "surface-variant": "#e6e2e0",
+                        "on-secondary-fixed-variant": "#5d4037",
+                        "background": "#fdf8f7",
+                        "error-container": "#ffdad6",
+                        "outline": "#7b766e",
+                        "on-surface-variant": "#4a463f",
+                        "surface-dim": "#ddd9d8",
+                        "on-tertiary-fixed-variant": "#65394b",
+                        "surface-container": "#f1edeb",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#fed3c7",
+                        "secondary-fixed": "#ffdbd0",
+                        "tertiary-fixed-dim": "#f2b6cb",
+                        "primary": "#625e58",
+                        "surface-container-high": "#ebe7e6",
+                        "on-primary-fixed": "#1e1b17",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#2c160e",
+                        "surface-bright": "#fdf8f7",
+                        "tertiary": "#805062",
+                        "on-tertiary-container": "#966376",
+                        "inverse-on-surface": "#f4f0ee",
+                        "surface-tint": "#625e58",
+                        "tertiary-fixed": "#ffd9e4",
+                        "on-secondary-container": "#795950",
+                        "primary-container": "#fff8f0",
+                        "outline-variant": "#ccc6bc",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#31302f",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#e8e1da",
+                        "primary-fixed-dim": "#ccc6be",
+                        "surface": "#fdf8f7",
+                        "on-tertiary-fixed": "#330f1f",
+                        "gold": "#D4AF37",
+                        "soft-pink": "#FDECEF",
+                        "choco-brown": "#4A3B32"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "stack-lg": "64px",
+                        "stack-md": "32px",
+                        "unit": "8px",
+                        "container-max-width": "1280px",
+                        "margin-mobile": "20px",
+                        "stack-sm": "16px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Playfair Display"],
+                        "label-md": ["Montserrat"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Montserrat"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Montserrat"],
+                        "label-sm": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    },
+                    "boxShadow": {
+                        "premium": "0 20px 40px -10px rgba(119, 87, 77, 0.08)",
+                        "glass": "0 8px 32px 0 rgba(119, 87, 77, 0.15)"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        
+        .floating-pastry {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm glass-nav transition-all duration-300" id="navbar">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full max-w-container-max-width mx-auto">
+<!-- Brand Logo -->
+<a class="font-display-lg text-headline-md font-bold text-on-surface dark:text-surface-bright tracking-tight" href="index.html">
+                Sweet Crumbs
+            </a>
+<!-- Desktop Nav Links -->
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1 hover:bg-primary-container/50 dark:hover:bg-primary-container/20 transition-all duration-300" href="index.html">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/50 dark:hover:bg-primary-container/20 transition-all duration-300" href="#about">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/50 dark:hover:bg-primary-container/20 transition-all duration-300" href="menu.html">Menu</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/50 dark:hover:bg-primary-container/20 transition-all duration-300" href="#gallery">Gallery</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/50 dark:hover:bg-primary-container/20 transition-all duration-300" href="#custom-cakes">Custom Cakes</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/50 dark:hover:bg-primary-container/20 transition-all duration-300" href="#reviews">Reviews</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/50 dark:hover:bg-primary-container/20 transition-all duration-300" href="#contact">Contact</a>
+</div>
+<!-- Trailing Action -->
+<div class="hidden md:block">
+<a class="bg-secondary text-on-primary font-label-md text-label-md px-6 py-3 rounded-full hover:-translate-y-0.5 transition-transform duration-300 shadow-md" href="#order">
+                    Order Now
+                </a>
+</div>
+<!-- Mobile Menu Toggle (Visual only for now) -->
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-primary-container">
+<!-- Parallax Background Image -->
+<div class="absolute inset-0 w-full h-full parallax-bg opacity-30" data-alt="A breathtaking, cinematic photograph of a high-end bakery interior. Soft, warm morning sunlight filters through large windows, illuminating a rustic wooden table covered in a delicate dusting of flour. Artisanal sourdough loaves, intricately decorated cakes, and golden-brown croissants are artfully arranged. The atmosphere is warm, cozy, and uncompromisingly elegant with a modern minimal luxury aesthetic. Soft cream and warm brown tones dominate." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDen381LjoR2CPyi0kG4rGG1YYwbg9BSe_3AnSKzyHzTiErlTeSMoEJV_s1Gp7dnxSnpFqliZoR-mPM4SSTFQRsE2dzFCqGXeAO4xLG7e5tdbA8huJBw_-p0LIIZAW9FidlG3Snf38RTR68GV0ClzRw1F3NUFmfFcpttL1j0igjfXBsFc_AO50sh_59zxrCP2hc9N4hPdKhqHca45IVn562si7SWHyOmLN8tztyru4ScDyfamAsxa6q')">
+</div>
+<!-- Gradient Overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-b from-primary-container/80 via-primary-container/50 to-background z-0"></div>
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto flex flex-col items-center">
+<span class="font-label-md text-label-md text-secondary tracking-[0.2em] uppercase mb-4 fade-in-section">Welcome to Sweet Crumbs</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6 fade-in-section delay-100">
+                Baked Fresh, Served with Love
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl fade-in-section delay-200">
+                Artisan delights from the heart of Kanpur. Experience the warm embrace of handcrafted pastries, bespoke cakes, and bread baked to absolute perfection in our cozy boutique bakery.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 fade-in-section delay-300">
+<a class="bg-secondary text-on-primary font-label-md text-label-md px-8 py-4 rounded-full hover:-translate-y-1 transition-transform duration-300 shadow-md flex items-center justify-center gap-2" href="#menu">
+                    Explore Menu
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+<a class="bg-transparent border border-gold text-secondary font-label-md text-label-md px-8 py-4 rounded-full hover:bg-gold/10 hover:-translate-y-1 transition-transform duration-300 flex items-center justify-center" href="#order">
+                    Order Now
+                </a>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+<span class="material-symbols-outlined text-secondary opacity-70" style="font-variation-settings: 'FILL' 0;">keyboard_arrow_down</span>
+</div>
+</section>
+<!-- About Teaser -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-background" id="about">
+<div class="max-w-container-max-width mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-24">
+<div class="w-full md:w-1/2 relative fade-in-section">
+<!-- Abstract Blob Background -->
+<div class="absolute -top-10 -left-10 w-64 h-64 bg-secondary-container rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+<div class="absolute -bottom-10 -right-10 w-64 h-64 bg-tertiary-container rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+<img alt="Our Baker" class="relative z-10 w-full h-[500px] object-cover rounded-[2rem] shadow-premium" data-alt="A portrait-oriented, high-fashion style photograph of an expert baker in a pristine white apron, carefully placing delicate gold leaf onto a rich chocolate cake. The setting is a bright, modern, minimalist bakery kitchen with warm cream walls and subtle wooden accents. The lighting is soft and directional, highlighting the texture of the cake and the focus of the baker. Elegant, luxurious, and tactile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN3gLmP2NK8Qux1avZYcz_wOq-1NvWW4At59LSaqvs-qfsO7dqB7sqB35cgMnIrIdJsmfjrYTLS6cS4cOBrkMcMkca7cO_tRgg_4g7nAXtPd-YqgTyu4pldb1DfXMTbIfzRVLn4xmh_HL0ruW6V82Hb_xg4NPfkLF2dwl6YdlGqXoQqMRw4icexlTG9A1gvan6xCs0ivNvFnGVC-FN7GE80f1wYpwbItA0w-OkM_CAD-b-BbIZBnC4"/>
+</div>
+<div class="w-full md:w-1/2 flex flex-col justify-center fade-in-section delay-200">
+<span class="font-label-md text-label-md text-secondary tracking-[0.1em] uppercase mb-2">Our Story</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">A Passion for Perfection in Every Bite</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+                    At Sweet Crumbs Bakery, we believe that baking is an art form. Founded in the heart of Kanpur, our boutique bakery blends traditional techniques with modern flavor profiles to create unforgettable sensory experiences. 
+                </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                    We source only the finest, freshest ingredients, ensuring that every handcrafted pastry, bread, and custom cake is a testament to uncompromising elegance and cozy indulgence.
+                </p>
+<div>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md hover:text-gold transition-colors pb-1 border-b border-transparent hover:border-gold" href="#about-more">
+                        Read Our Full Story
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">east</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products Grid (Bento Style) -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low" id="menu">
+<div class="max-w-container-max-width mx-auto">
+<div class="text-center mb-16 fade-in-section">
+<span class="font-label-md text-label-md text-secondary tracking-[0.1em] uppercase mb-2 block">Our Masterpieces</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Signature Creations</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Large Featured Item -->
+<div class="md:col-span-8 group rounded-2xl overflow-hidden shadow-premium bg-surface-container-lowest relative fade-in-section h-[400px]">
+<img alt="Signature Chocolate Cake" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A top-down, exquisitely styled photograph of a large, decadent bespoke chocolate cake decorated with fresh berries, macarons, and edible gold dust. The cake sits on a minimalist marble slab against a soft cream background. The lighting is moody yet soft, creating a rich, premium, and appetizing atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjB4V21Px1K3EXmYLaX0oOUnGbnJaYKlZxUv6DtKPbfI0F-PqhriIEghYVboPWzRisfbJv9HREVsD1VR2UxBfLwN5xr0wSmLDtTJKDDF4loaOYxo3lqXC6I2mocoKfYe41aH4eOF8d_dyc8OxKMUCa257OWXKVEzyZltuG1vLKbaSdR4YbURrLiaRlSmEqcLQip0qKhk2bIE0992B2MWqfSVC2lf-DN6IEQ9Qhcqce2OyumYWAiqHH"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex flex-col justify-end p-8">
+<span class="bg-soft-pink text-choco-brown font-label-sm text-label-sm px-3 py-1 rounded-full w-max mb-3">Best Seller</span>
+<h3 class="font-headline-md text-headline-md text-white mb-2">Bespoke Chocolate Truffle Cake</h3>
+<p class="font-body-md text-body-md text-white/90 mb-4 line-clamp-2 max-w-md">Layers of rich, dark chocolate sponge enveloped in silky ganache, finished with artisan touches.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-headline-md text-headline-md text-white font-bold">₹1,200</span>
+<button class="bg-white/20 backdrop-blur-sm border border-white/50 text-white hover:bg-white hover:text-secondary font-label-md text-label-md px-6 py-2 rounded-full transition-all duration-300">
+                                Add to Cart
+                            </button>
+</div>
+</div>
+</div>
+<!-- Small Featured Item 1 -->
+<div class="md:col-span-4 group rounded-2xl overflow-hidden shadow-premium bg-surface-container-lowest relative fade-in-section delay-100 h-[400px]">
+<img alt="Almond Croissant" class="w-full h-1/2 object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up, high-end macro shot of a delicate, flaky almond croissant on a warm wooden serving board. The croissant is dusted with powdered sugar that catches the soft morning light. The background is a soft, blurry warm cream. Tactile, inviting, and highly detailed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG-FR_mwiZ8I42vSnjalDa4QmSmPRjDoSbhOhAfwppIAB1I2PzugX4TFfGd9w8GPHy-wp1P-zL2qTkDgdlk18c1z0Pc9bLRVO8HpCckQjsUrsGwgBB3qQzYVneQKNXGreN_kPg30Yr6Xg3T5o9jFAT6-8rdcnmBotvSJL95n934qL4u-KThWgCs3ZulfOAPWmoaPBnkxU-2lrQo4y8K6hUAVPuQOeVCa30j733CoDbUMo_ZPiq2pZ2"/>
+<div class="h-1/2 p-6 flex flex-col bg-surface-container-lowest">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Artisan Almond Croissant</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow text-sm">Flaky, buttery layers filled with rich almond frangipane.</p>
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-secondary font-bold">₹180</span>
+<button class="text-secondary hover:text-gold transition-colors p-2 rounded-full hover:bg-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Small Featured Item 2 -->
+<div class="md:col-span-4 group rounded-2xl overflow-hidden shadow-premium bg-surface-container-lowest relative fade-in-section delay-200 h-[400px]">
+<div class="h-1/2 p-6 flex flex-col bg-surface-container-lowest order-2">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Classic Vanilla Cupcakes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow text-sm">Light vanilla sponge topped with Madagascar vanilla bean buttercream.</p>
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-secondary font-bold">₹120</span>
+<button class="text-secondary hover:text-gold transition-colors p-2 rounded-full hover:bg-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<img alt="Vanilla Cupcakes" class="w-full h-1/2 object-cover transition-transform duration-700 group-hover:scale-105 order-1" data-alt="A beautifully composed shot of three perfect vanilla cupcakes with swirling white buttercream frosting. They sit on an elegant minimalist cake stand. The lighting is bright and high-key, emphasizing the pure white and soft cream tones. A premium, appetizing bakery setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2f8ZFydo_rsHEYhoTFax-xrwWT7ofmjIcXlrjw8ypmFRtCn5IC8vC2KQOPkngw92xPA2QcNTVndUc6ZLH1FbpVBSvd_hzqy22tc1JRncmbJmv2PF4QpF00jv7cE6mn3qY84bbrEQh4ahsNUDS5-t0lcA9HvvJfIJBa4GaRusZ4R6ATyz0sYETMQ-fq0GdA_yA0MsWgBtn2itFhM3OchYHECAR_uxMtAhzKYZHICBrIHijYTNL1ABu"/>
+</div>
+<!-- Large Featured Item 2 (Wide) -->
+<div class="md:col-span-8 group rounded-2xl overflow-hidden shadow-premium bg-surface-container-lowest relative fade-in-section delay-300 h-[400px] flex flex-col md:flex-row">
+<div class="w-full md:w-1/2 p-8 flex flex-col justify-center bg-primary-container order-2 md:order-1">
+<span class="bg-soft-pink text-choco-brown font-label-sm text-label-sm px-3 py-1 rounded-full w-max mb-4">Gluten-Free</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Raspberry Macaron Tower</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Delicate French macarons filled with tart raspberry ganache. Perfect for elegant celebrations and gifts.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-headline-md text-headline-md text-secondary font-bold">₹850</span>
+<button class="bg-secondary text-on-primary hover:bg-secondary/90 font-label-md text-label-md px-6 py-2 rounded-full transition-all duration-300 shadow-sm hover:-translate-y-0.5">
+                                Add to Cart
+                            </button>
+</div>
+</div>
+<img alt="Macaron Tower" class="w-full md:w-1/2 h-1/2 md:h-full object-cover order-1 md:order-2" data-alt="A stunning, modern lifestyle photo of a small tower of vibrant pink raspberry macarons. The setting is clean and minimalist, with a warm cream backdrop and a subtle blush shadow. The texture of the macaron shells is perfectly captured. Elegant, luxurious, and highly appetizing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDISHPXGMMHxwFzbDCjT1zJEgNcXYVjhtpdsZwCU_JtkoXJMO2DDmuJfy2Et4gd18lc1SlQEjH-GJo0mLkfN5WMAqHg6d5BX6X9yq2e3Jt8vmuZRuUqGoRh1qsV7L5AjovPFrwBzoVZeGPVL_Np4sik1IdRa0nYjfB8V3AXhqs6YqafEyl8tkV14lylSwLuUob9OFc8Jqw_Chht5lqfjNczl-mkmPQy4FD_qbbAMyXnAp3ibO2mHAdd"/>
+</div>
+</div>
+<div class="text-center mt-12 fade-in-section delay-300">
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md hover:text-gold transition-colors pb-1 border-b border-transparent hover:border-gold" href="#full-menu">
+                    View Full Menu
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-background">
+<div class="max-w-container-max-width mx-auto">
+<div class="text-center mb-16 fade-in-section">
+<span class="font-label-md text-label-md text-secondary tracking-[0.1em] uppercase mb-2 block">Our Promise</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">The Sweet Crumbs Difference</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container p-8 rounded-2xl text-center shadow-sm hover:shadow-premium transition-shadow duration-300 border border-transparent hover:border-gold/30 fade-in-section">
+<div class="w-16 h-16 mx-auto bg-primary-container rounded-full flex items-center justify-center mb-6 text-secondary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'wght' 300;">eco</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Fresh Ingredients</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We source locally and internationally for the highest quality, ensuring every bite is naturally flavorful and fresh.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container p-8 rounded-2xl text-center shadow-sm hover:shadow-premium transition-shadow duration-300 border border-transparent hover:border-gold/30 fade-in-section delay-100">
+<div class="w-16 h-16 mx-auto bg-primary-container rounded-full flex items-center justify-center mb-6 text-secondary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'wght' 300;">bakery_dining</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Expert Bakers</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Our team of artisans brings decades of combined experience, mastering both classic recipes and modern techniques.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container p-8 rounded-2xl text-center shadow-sm hover:shadow-premium transition-shadow duration-300 border border-transparent hover:border-gold/30 fade-in-section delay-200">
+<div class="w-16 h-16 mx-auto bg-primary-container rounded-full flex items-center justify-center mb-6 text-secondary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'wght' 300;">cleaning_services</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Hygienic Kitchen</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We maintain uncompromising standards of cleanliness, creating a safe and pristine environment for culinary creation.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full rounded-t-xl mt-stack-lg border-t border-outline-variant px-margin-mobile md:px-margin-desktop py-stack-lg">
+<div class="max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter fade-in-section">
+<!-- Brand Column -->
+<div class="flex flex-col gap-4">
+<span class="font-display-lg text-headline-lg text-primary dark:text-primary-fixed tracking-tight">Sweet Crumbs</span>
+<p class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim mt-2 max-w-xs">
+                    Artisan delights crafted with love in Kanpur. Elevating everyday moments with uncompromising sweetness.
+                </p>
+<div class="flex gap-4 mt-4 text-on-surface-variant">
+<a class="hover:text-secondary hover:translate-y-[-2px] transition-transform duration-300 focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-full p-1" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="hover:text-secondary hover:translate-y-[-2px] transition-transform duration-300 focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-full p-1" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+</div>
+</div>
+<!-- Links Column 1 -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-label-md font-semibold text-primary mb-2 uppercase tracking-wider">Explore</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-y-[-2px] transition-transform duration-300 w-max focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm" href="menu.html">Menu</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-y-[-2px] transition-transform duration-300 w-max focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm" href="#custom-cakes">Custom Cakes</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-y-[-2px] transition-transform duration-300 w-max focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm" href="#about">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-y-[-2px] transition-transform duration-300 w-max focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm" href="#contact">Contact</a>
+</div>
+<!-- Links Column 2 -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-label-md font-semibold text-primary mb-2 uppercase tracking-wider">Legal</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-y-[-2px] transition-transform duration-300 w-max focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-y-[-2px] transition-transform duration-300 w-max focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-y-[-2px] transition-transform duration-300 w-max focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm" href="#">Shipping Info</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-y-[-2px] transition-transform duration-300 w-max focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm" href="#">FAQ</a>
+</div>
+<!-- Contact Column -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-label-md font-semibold text-primary mb-2 uppercase tracking-wider">Visit Us</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">123 Civil Lines, Kanpur<br/>Uttar Pradesh, India</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Mon-Sun: 8:00 AM - 10:00 PM</p>
+<a class="font-body-md text-body-md text-secondary font-semibold mt-2 hover:text-gold transition-colors" href="tel:+919876543210">+91 98765 43210</a>
+</div>
+</div>
+<div class="max-w-container-max-width mx-auto mt-12 pt-8 border-t border-outline-variant/30 text-center flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim">
+                © 2024 Sweet Crumbs Bakery Kanpur. All rights reserved.
+            </p>
+<p class="font-label-sm text-label-sm text-on-surface-variant/70">
+                Designed with elegant simplicity.
+            </p>
+</div>
+</footer>
+<!-- Floating Action Buttons -->
+<div class="fixed bottom-8 right-8 flex flex-col gap-4 z-50">
+<a class="w-14 h-14 bg-[#25D366] text-white rounded-full shadow-premium flex items-center justify-center hover:scale-110 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#25D366]" href="https://wa.me/1234567890" rel="noopener noreferrer" target="_blank">
+<!-- Simple SVG for WhatsApp since Material doesn't have brand icons natively -->
+<svg class="w-7 h-7 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path></svg>
+</a>
+<button class="w-14 h-14 bg-secondary text-white rounded-full shadow-premium flex items-center justify-center hover:scale-110 hover:bg-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">call</span>
+</button>
+</div>
+<!-- Intersection Observer for Fade-Ins and Navbar Scroll -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Fade-in animation observer
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Navbar shrink/style on scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('py-2', 'shadow-md');
+                    navbar.classList.remove('py-4', 'shadow-sm');
+                    navbar.classList.add('border-b-gold');
+                    navbar.classList.remove('border-outline-variant/30');
+                } else {
+                    navbar.classList.add('py-4', 'shadow-sm');
+                    navbar.classList.remove('py-2', 'shadow-md');
+                    navbar.classList.remove('border-b-gold');
+                    navbar.classList.add('border-outline-variant/30');
+                }
+            });
+        });
+    </script>
+</body></html>
